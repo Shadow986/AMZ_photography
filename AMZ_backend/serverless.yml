@@ -1,0 +1,28 @@
+service: amz-backend  # Corrected service name
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+
+functions:
+  uploadImage:
+    handler: handler.uploadImage
+    events:
+      - http:
+          path: upload
+          method: post
+
+  getImages:
+    handler: handler.getImages
+    events:
+      - http:
+          path: images
+          method: get
+
+resources:
+  Resources:
+    ImagesBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: my-images-amz
