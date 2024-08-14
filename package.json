@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1673.0",
+    "stripe": "^16.7.0"
+  }
+}
