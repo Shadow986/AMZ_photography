@@ -1,1 +1,2 @@
 # AMZ_photography
+AMZ Photography was born from our unwavering passion for capturing the raw beauty of nature. Our lenses are drawn to the intricate details of a dew-kissed leaf, the majestic flight of a bird against a vibrant sunset, and the unfiltered joy on the faces of families exploring the wilderness. We specialize in photographing those who venture into the wild, ensuring that these cherished moments are forever preserved—a testament to the fleeting magic of life
