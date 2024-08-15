@@ -139,3 +139,32 @@ document.getElementById('').onclick = function() {
     section.className = 'wow lightSpeedIn';
     this.parentNode.insertBefore(section, this);
 };
+
+// Example function to submit data to backend
+const submitData = async (formData) => {
+    try {
+        const response = await fetch('https://gjhx5lfmc2.execute-api.us-east-1.amazonaws.com/prod/your-endpoint', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        console.log(result);
+        // Handle response as needed
+    } catch (error) {
+        console.error('Error submitting data:', error);
+    }
+};
+
+// Example of how to use submitData, e.g., on form submission
+document.querySelector('form').addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent the default form submission
+    const formData = new FormData(event.target); // Get form data
+    const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON
+    submitData(data);
+});
