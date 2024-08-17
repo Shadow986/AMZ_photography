@@ -450,7 +450,7 @@
             };
 
             try {
-                const response = await fetch('https://gjhx5lfmc2.execute-api.us-east-1.amazonaws.com/prod/backendlambda', {
+                const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -471,7 +471,28 @@
                 alert('Failed to send message.');
             }
         });
-    </script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <div class="col-lg-8 wow fadeInLeft delay-06s">
+        <div class="form">
+            <form id="contactForm">
+                <input class="input-text" type="text" id="name" name="name" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                <input class="input-text" type="email" id="email" name="email" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                <textarea class="input-text text-area" id="message" name="message" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+                <button class="input-btn" type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Button to Trigger GET Request -->
+    <button id="fetchDataButton">Fetch Data</button>
 
     <footer>
         <div class="container">
@@ -480,6 +501,72 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const data = {
+                name,
+                email,
+                message
+            };
+
+            console.log('Sending data:', data); // Debugging log
+
+            try {
+                const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                console.log('Response from API:', result); // Debugging log
+                alert('Message sent successfully!');
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+                alert('Failed to send message.');
+            }
+        });
+
+        // Handle GET request
+        document.getElementById('fetchDataButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ/', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': 'Bearer YOUR_AUTH_TOKEN' // Replace with your actual token if needed
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const result = await response.json();
+                console.log('Response from API:', result); // Debugging log
+                alert('Data fetched successfully!');
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+                alert('Failed to fetch data.');
+            }
+        });
+    </script>
 
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -492,3 +579,4 @@
     <script type="text/javascript" src="js/custom.js"></script>
 </body>
 </html>
+
