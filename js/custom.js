@@ -143,7 +143,7 @@ document.getElementById('').onclick = function() {
 // Example function to submit data to backend
 const submitData = async (formData) => {
     try {
-        const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/prod', {
+        const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
