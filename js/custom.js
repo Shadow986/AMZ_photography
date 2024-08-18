@@ -11,7 +11,7 @@ $(document).ready(function() {
         return false
 
     });
-	
+
     function resizeText() {
         var preferredWidth = 767;
         var displayWidth = window.innerWidth;
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
         return columnNumb;
     }
-	
+
     function setColumns() {
         var winWidth = $(window).width(),
             columnNumb = splitColumns(),
@@ -134,30 +134,46 @@ if (someElement) {
 }
 
 // Example function to submit data to backend
+const AUTH_TOKEN = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
+
 const submitData = async (formData) => {
     try {
         const response = await fetch('https://pmqlq6lync.execute-api.us-east-1.amazonaws.com/Prod/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${AUTH_TOKEN}` // Correct string interpolation
             },
             body: JSON.stringify(formData),
         });
+
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Network response was not ok: ${response.statusText}`); // Correct error message formatting
         }
         const result = await response.json();
-        console.log(result);
-        // Handle response as needed
+        console.log('Response from API:', result); // Debugging log
+        alert('Message sent successfully!');
     } catch (error) {
         console.error('Error submitting data:', error);
+        alert('Failed to send message.');
     }
 };
 
 // Example of how to use submitData, e.g., on form submission
-document.querySelector('form').addEventListener('submit', (event) => {
+document.getElementById('contactForm').addEventListener('submit', async (event) => {
     event.preventDefault(); // Prevent the default form submission
-    const formData = new FormData(event.target); // Get form data
-    const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON
-    submitData(data);
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    const data = {
+        name,
+        email,
+        message
+    };
+
+    console.log('Sending data:', data); // Debugging log
+    await submitData(data);
 });
