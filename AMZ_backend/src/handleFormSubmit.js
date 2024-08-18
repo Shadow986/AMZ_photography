@@ -4,9 +4,9 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event) => {
     try {
         const requestBody = JSON.parse(event.body);
-        
-        // Extract form data (assuming it has `name` and `email`)
-        const { name, email } = requestBody;
+
+        // Extract form data (including `name`, `email`, and `message`)
+        const { name, email, message } = requestBody;
 
         // Validate form data
         if (!name || !email) {
@@ -23,9 +23,10 @@ exports.handler = async (event) => {
                 id: new Date().toISOString(),
                 name,
                 email,
+                message, // Store the message in DynamoDB
             },
         };
-        
+
         await dynamoDB.put(params).promise();
 
         return {
@@ -39,4 +40,3 @@ exports.handler = async (event) => {
         };
     }
 };
-
