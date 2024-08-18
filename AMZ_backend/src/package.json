@@ -1,0 +1,10 @@
+{
+  "name": "my-serverless-app",
+  "version": "1.0.0",
+  "description": "Serverless application for handling form submissions",
+  "main": "handleFormSubmit.js",
+  "dependencies": {
+    "aws-sdk": "^2.1000.0"
+  }
+}
+

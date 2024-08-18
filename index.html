@@ -584,7 +584,7 @@
             console.log('Sending data:', data); // Debugging log
 
             try {
-                const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ/', {
+                const response = await fetch('https://pmqlq6lync.execute-api.us-east-1.amazonaws.com/Prod/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -609,7 +609,7 @@
         // Handle GET request
         document.getElementById('fetchDataButton').addEventListener('click', async () => {
             try {
-                const response = await fetch('https://pmqlq6lync.execute-api.us-east-1.amazonaws.com/Prod/', {
+                const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ/', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
@@ -630,6 +630,14 @@
                 alert('Failed to fetch data.');
             }
         });
+
+        // Ensure the element exists before setting properties
+        const someElement = document.getElementById('someElementId');
+        if (someElement) {
+            someElement.onclick = function() {
+                // Your code here
+            };
+        }
     </script>
 
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>

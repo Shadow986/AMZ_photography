@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS SAM template for a serverless web app backend
+
+Resources:
+  # DynamoDB Table
+  FormTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: FormSubmissions
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  # Lambda Function
+  FormSubmitFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: handleFormSubmit.handler
+      Runtime: nodejs20.x
+      CodeUri: src/
+      MemorySize: 128
+      Timeout: 10
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref FormTable
+      Events:
+        FormSubmitApi:
+          Type: Api
+          Properties:
+            Path: /submitForm
+            Method: post
+
+Outputs:
+  ApiUrl:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/submitForm"
