@@ -124,14 +124,14 @@ wow = new WOW({
     offset: 100
 });
 wow.init();
-document.getElementById('').onclick = function() {
-    var section = document.createElement('section');
-    section.className = 'wow fadeInDown';
-    section.className = 'wow shake';
-    section.className = 'wow zoomIn';
-    section.className = 'wow lightSpeedIn';
-    this.parentNode.insertBefore(section, this);
-};
+const someElement = document.getElementById('someElementId');
+if (someElement) {
+    someElement.onclick = function() {
+        var section = document.createElement('section');
+        section.classList.add('wow', 'fadeInDown', 'shake', 'zoomIn', 'lightSpeedIn');
+        this.parentNode.insertBefore(section, this);
+    };
+}
 
 // Example function to submit data to backend
 const submitData = async (formData) => {
