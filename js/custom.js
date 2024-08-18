@@ -1,10 +1,3 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
-
 $(window).load(function() {
     jQuery('#all').click();
     return false;
@@ -143,7 +136,7 @@ document.getElementById('').onclick = function() {
 // Example function to submit data to backend
 const submitData = async (formData) => {
     try {
-        const response = await fetch('https://4jxnlyq9o3.execute-api.us-east-1.amazonaws.com/AMZ', {
+        const response = await fetch('https://pmqlq6lync.execute-api.us-east-1.amazonaws.com/Prod/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
