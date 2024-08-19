@@ -1,42 +1,48 @@
 const AWS = require('aws-sdk');
-const dynamoDB = new AWS.DynamoDB.DocumentClient();
+const dynamoDb = new AWS.DynamoDB.DocumentClient();
+const { v4: uuidv4 } = require('uuid');
 
 exports.handler = async (event) => {
-    try {
-        const requestBody = JSON.parse(event.body);
+    const token = event.headers.Authorization.split(' ')[1];
+    const validToken = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
 
-        // Extract form data (including `name`, `email`, and `message`)
-        const { name, email, message } = requestBody;
+    const response = {
+        statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': 'https://amz-photography.vercel.app',
+            'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+        },
+        body: JSON.stringify({ message: 'Hello from Lambda!' })
+    };
 
-        // Validate form data
-        if (!name || !email) {
-            return {
-                statusCode: 400,
-                body: JSON.stringify({ error: 'Name and email are required' }),
-            };
+    if (token !== validToken) {
+        response.statusCode = 403;
+        response.body = JSON.stringify({ message: 'Forbidden' });
+        return response;
+    }
+
+    const requestBody = JSON.parse(event.body);
+    const { name, email, message } = requestBody;
+
+    const params = {
+        TableName: process.env.TABLE_NAME,
+        Item: {
+            id: uuidv4(),
+            name,
+            email,
+            message,
+            submittedAt: new Date().toISOString()
         }
+    };
 
-        // Optionally save data to DynamoDB
-        const params = {
-            TableName: process.env.TABLE_NAME,
-            Item: {
-                id: new Date().toISOString(),
-                name,
-                email,
-                message, // Store the message in DynamoDB
-            },
-        };
-
-        await dynamoDB.put(params).promise();
-
-        return {
-            statusCode: 200,
-            body: JSON.stringify({ message: 'Form submitted successfully!' }),
-        };
+    try {
+        await dynamoDb.put(params).promise();
+        response.body = JSON.stringify({ message: 'Form submitted successfully!' });
+        return response;
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: 'Internal Server Error' }),
-        };
+        response.statusCode = 500;
+        response.body = JSON.stringify({ message: 'Failed to submit form', error });
+        return response;
     }
 };

@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: AWS SAM template for a serverless web app backend
-
 Resources:
   FormTable:
     Type: AWS::DynamoDB::Table
@@ -14,7 +13,8 @@ Resources:
       - AttributeName: id
         KeyType: HASH
       BillingMode: PAY_PER_REQUEST
-
+    Metadata:
+      SamResourceId: FormTable
   FormSubmitFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -25,35 +25,38 @@ Resources:
       Timeout: 10
       Environment:
         Variables:
-          TABLE_NAME: !Ref FormTable
+          TABLE_NAME:
+            Ref: FormTable
       Events:
         FormSubmitApi:
           Type: Api
           Properties:
             Path: /submitForm
             Method: post
-            RestApiId: !Ref ServerlessRestApi
-
+            RestApiId:
+              Ref: ServerlessRestApi
+    Metadata:
+      SamResourceId: FormSubmitFunction
   ServerlessRestApi:
     Type: AWS::Serverless::Api
     Properties:
       Name: MyApi
       StageName: Prod
       DefinitionBody:
-        swagger: "2.0"
+        swagger: '2.0'
         info:
-          title: "My API"
-          version: "1.0"
+          title: My API
+          version: '1.0'
         paths:
           /submitForm:
             post:
               produces:
-                - application/json
+              - application/json
               consumes:
-                - application/json
+              - application/json
               responses:
                 '200':
-                  description: "Success"
+                  description: Success
                   schema:
                     type: object
                     properties:
@@ -67,13 +70,13 @@ Resources:
                 passthroughBehavior: when_no_match
                 contentHandling: CONVERT_TO_TEXT
       Cors:
-        AllowMethods: "'OPTIONS,POST,GET'"
-        AllowHeaders: "'Content-Type,Authorization'"
-        AllowOrigin: "'https://amz-photography.vercel.app'"
-
+        AllowMethods: '''OPTIONS,POST,GET'''
+        AllowHeaders: '''Content-Type,Authorization'''
+        AllowOrigin: '''https://amz-photography.vercel.app'''
+    Metadata:
+      SamResourceId: ServerlessRestApi
 Outputs:
   ApiUrl:
     Description: API Gateway endpoint URL for Prod stage
     Value:
       Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/submitForm
-
