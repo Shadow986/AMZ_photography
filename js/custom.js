@@ -138,7 +138,7 @@ const AUTH_TOKEN = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
 
 const submitData = async (formData) => {
     try {
-        const response = await fetch('https://g5el2mqeo8.execute-api.us-east-1.amazonaws.com/Prod', {
+        const response = await fetch('http://41.175.92.215/submitForm', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
