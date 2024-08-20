@@ -4,7 +4,7 @@
 Overview
 AMZ Photography is a dynamic web application designed to showcase and sell photography services. The project leverages AWS Serverless Services for the backend and a modern web stack for the frontend, hosted on Vercel.
 
-![AMZ Photography Logo]("C:\Users\Marcia\Desktop\Capturing your timeless memories 2.png")
+![AMZ Photography Logo](./Capturing your timeless memories 2.png)
 
 Project Structure
 
