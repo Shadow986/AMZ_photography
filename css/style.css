@@ -768,27 +768,27 @@ a.contact_btn:hover {
 }
 
 
-/* Portfolio
+/* Gallary
 ---------------------------------*/
 
 
-#Portfolio {
+#Gallary {
     padding: 60px 0px;
 }
 
-.Portfolio-nav {
+.Gallary-nav {
     padding: 0;
     margin: 0 0 45px 0;
     list-style: none;
     text-align: center;
 }
 
-.Portfolio-nav li {
+.Gallary-nav li {
     margin: 0 10px;
     display: inline;
 }
 
-.Portfolio-nav li a {
+.Gallary-nav li a {
     display: inline-block;
     padding: 10px 22px;
     font-size: 12px;
@@ -803,19 +803,19 @@ a.contact_btn:hover {
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-.Portfolio-nav li a:hover {
+.Gallary-nav li a:hover {
     background: #ED5441;
     color: #fff;
     text-decoration: none;
 }
 
-.portfolioContainer {
+.GallaryContainer {
     margin: 0 auto;
     padding-left: 15px;
     width: auto !important;
 }
 
-.Portfolio-box {
+.Gallary-box {
     text-align: center;
     width: 350px;
     overflow: hidden;
@@ -823,17 +823,17 @@ a.contact_btn:hover {
     padding: 12px 0px;
 }
 
-.Portfolio-box img {
+.Gallary-box img {
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-.Portfolio-box img:hover {
+.Gallary-box img:hover {
     opacity: 0.6;
 }
 
-.Portfolio-nav li a.current {
+.Gallary-nav li a.current {
     background: #ED5441;
     color: #fff;
     text-decoration: none;
@@ -1467,19 +1467,19 @@ transition: all .3s;
 
 
 	
-/* Portfolio */	
+/* Gallary */	
 	
-.container.portfolio_title {
+.container.Gallary_title {
     padding-bottom: 0px;
 }
 
-#portfolio {
+#Gallary {
     padding: 60px 0 40px;
 }
 
 
 
-/* Portfolio Filters */	
+/* Gallary Filters */	
 
 #filters {
     margin-top: 10px;
@@ -1571,9 +1571,9 @@ padding:80px 0 60px;
 	padding: 3px 10px 2px;
 }
 
-/* Portfolio Items */	
+/* Gallary Items */	
 
-#portfolio_wrapper {
+#Gallary_wrapper {
     position: relative;
     padding: 0;
     width: 100%;
@@ -1581,7 +1581,7 @@ padding:80px 0 60px;
     display: block;
 }
 
-#portfolio_wrapper .one-four {
+#Gallary_wrapper .one-four {
     margin: 0!important;
     line-height: 0;
     width: 25%;
@@ -1589,24 +1589,24 @@ padding:80px 0 60px;
     position: relative;
 }
 
-.portfolio-item {
+.Gallary-item {
     padding: 0;
     position: relative;
     overflow: hidden;
 }
 
-.portfolio-item .portfolio_img {
+.Gallary-item .Gallary_img {
     overflow: hidden;
     display: block;
     position: relative;
 }
 
-.portfolio-item .portfolio_img img {
+.Gallary-item .Gallary_img img {
     width: 100%;
     height: auto;
 }
 
-.portfolio-item:hover .item_overlay {
+.Gallary-item:hover .item_overlay {
     opacity: 1;
     transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -1665,7 +1665,7 @@ padding:80px 0 60px;
     z-index: 10;
 }
 
-.portfolio-item:hover .project_name {
+.Gallary-item:hover .project_name {
     opacity: 1;
     -webkit-transition: opacity .1s .2s;
     -moz-transition: opacity .1s .2s;
@@ -1686,7 +1686,7 @@ padding:80px 0 60px;
     -o-transition: all 0.2s ease 0s;
 }
 
-.portfolio-item:hover .project_catg {
+.Gallary-item:hover .project_catg {
     opacity: 0.8;
     -webkit-transition: opacity .1s .2s;
     -moz-transition: opacity .1s .2s;
@@ -1712,7 +1712,7 @@ padding:80px 0 60px;
     -o-transition: all 0.3s ease 0.2s;
 }
 
-.portfolio-item:hover .zoom-icon {
+.Gallary-item:hover .zoom-icon {
     opacity: 1;
     margin-top: 0px;
     -webkit-transition: opacity .3s .2s, margin-top .3s .2s;
@@ -1725,7 +1725,7 @@ padding:80px 0 60px;
 	
 	
 	
-/* Portfolio Isotope Transitions */	
+/* Gallary Isotope Transitions */	
 
 .isotope, .isotope .isotope-item {
     -webkit-transition-duration: 0.8s;
@@ -1761,7 +1761,7 @@ padding:80px 0 60px;
 
 
 
-/* Portfolio Expander */	
+/* Gallary Expander */	
 
 
 
@@ -1835,7 +1835,7 @@ padding:80px 0 60px;
 }
 
 	
-/* Portfolio*/	
+/* Gallary*/	
 	
 	
 .project-image-slider .bx-wrapper .bx-next {
@@ -1868,7 +1868,7 @@ padding:80px 0 60px;
     z-index: 100;
 }
 	
-/* Portfolio Normal Expander */		
+/* Gallary Normal Expander */		
 	
 .project-description {
     margin-top: 40px;
@@ -1900,7 +1900,7 @@ padding:80px 0 60px;
 	
 	
 	
-/* Portfolio FullScreen Expander */			
+/* Gallary FullScreen Expander */			
 	
 #cycle-loader {
     height: 32px;

@@ -49,7 +49,7 @@ $(document).ready(function() {
         }
     });
 
-    var container = $('#portfolio_wrapper');
+    var container = $('#Gallary_wrapper');
 
 
     container.isotope({
@@ -95,7 +95,7 @@ $(document).ready(function() {
             columnNumb = splitColumns(),
             postWidth = Math.floor(winWidth / columnNumb);
 
-        container.find('.portfolio-item').each(function() {
+        container.find('.Gallary-item').each(function() {
             $(this).css({
                 width: postWidth + 'px'
             });
