@@ -768,27 +768,27 @@ a.contact_btn:hover {
 }
 
 
-/* Gallary
+/* gallery
 ---------------------------------*/
 
 
-#Gallary {
+#gallery {
     padding: 60px 0px;
 }
 
-.Gallary-nav {
+.gallery-nav {
     padding: 0;
     margin: 0 0 45px 0;
     list-style: none;
     text-align: center;
 }
 
-.Gallary-nav li {
+.gallery-nav li {
     margin: 0 10px;
     display: inline;
 }
 
-.Gallary-nav li a {
+.gallery-nav li a {
     display: inline-block;
     padding: 10px 22px;
     font-size: 12px;
@@ -803,19 +803,19 @@ a.contact_btn:hover {
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-.Gallary-nav li a:hover {
+.gallery-nav li a:hover {
     background: #ED5441;
     color: #fff;
     text-decoration: none;
 }
 
-.GallaryContainer {
+.galleryContainer {
     margin: 0 auto;
     padding-left: 15px;
     width: auto !important;
 }
 
-.Gallary-box {
+.gallery-box {
     text-align: center;
     width: 350px;
     overflow: hidden;
@@ -823,17 +823,17 @@ a.contact_btn:hover {
     padding: 12px 0px;
 }
 
-.Gallary-box img {
+.gallery-box img {
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
 }
 
-.Gallary-box img:hover {
+.gallery-box img:hover {
     opacity: 0.6;
 }
 
-.Gallary-nav li a.current {
+.gallery-nav li a.current {
     background: #ED5441;
     color: #fff;
     text-decoration: none;
@@ -1467,19 +1467,19 @@ transition: all .3s;
 
 
 	
-/* Gallary */	
+/* gallery */	
 	
-.container.Gallary_title {
+.container.gallery_title {
     padding-bottom: 0px;
 }
 
-#Gallary {
+#gallery {
     padding: 60px 0 40px;
 }
 
 
 
-/* Gallary Filters */	
+/* gallery Filters */	
 
 #filters {
     margin-top: 10px;
@@ -1571,9 +1571,9 @@ padding:80px 0 60px;
 	padding: 3px 10px 2px;
 }
 
-/* Gallary Items */	
+/* gallery Items */	
 
-#Gallary_wrapper {
+#gallery_wrapper {
     position: relative;
     padding: 0;
     width: 100%;
@@ -1581,7 +1581,7 @@ padding:80px 0 60px;
     display: block;
 }
 
-#Gallary_wrapper .one-four {
+#gallery_wrapper .one-four {
     margin: 0!important;
     line-height: 0;
     width: 25%;
@@ -1589,24 +1589,24 @@ padding:80px 0 60px;
     position: relative;
 }
 
-.Gallary-item {
+.gallery-item {
     padding: 0;
     position: relative;
     overflow: hidden;
 }
 
-.Gallary-item .Gallary_img {
+.gallery-item .gallery_img {
     overflow: hidden;
     display: block;
     position: relative;
 }
 
-.Gallary-item .Gallary_img img {
+.gallery-item .gallery_img img {
     width: 100%;
     height: auto;
 }
 
-.Gallary-item:hover .item_overlay {
+.gallery-item:hover .item_overlay {
     opacity: 1;
     transition: all 0.4s ease 0s;
     -moz-transition: all 0.4s ease 0s;
@@ -1665,7 +1665,7 @@ padding:80px 0 60px;
     z-index: 10;
 }
 
-.Gallary-item:hover .project_name {
+.gallery-item:hover .project_name {
     opacity: 1;
     -webkit-transition: opacity .1s .2s;
     -moz-transition: opacity .1s .2s;
@@ -1686,7 +1686,7 @@ padding:80px 0 60px;
     -o-transition: all 0.2s ease 0s;
 }
 
-.Gallary-item:hover .project_catg {
+.gallery-item:hover .project_catg {
     opacity: 0.8;
     -webkit-transition: opacity .1s .2s;
     -moz-transition: opacity .1s .2s;
@@ -1712,7 +1712,7 @@ padding:80px 0 60px;
     -o-transition: all 0.3s ease 0.2s;
 }
 
-.Gallary-item:hover .zoom-icon {
+.gallery-item:hover .zoom-icon {
     opacity: 1;
     margin-top: 0px;
     -webkit-transition: opacity .3s .2s, margin-top .3s .2s;
@@ -1725,7 +1725,7 @@ padding:80px 0 60px;
 	
 	
 	
-/* Gallary Isotope Transitions */	
+/* gallery Isotope Transitions */	
 
 .isotope, .isotope .isotope-item {
     -webkit-transition-duration: 0.8s;
@@ -1761,7 +1761,7 @@ padding:80px 0 60px;
 
 
 
-/* Gallary Expander */	
+/* gallery Expander */	
 
 
 
@@ -1835,7 +1835,7 @@ padding:80px 0 60px;
 }
 
 	
-/* Gallary*/	
+/* gallery*/	
 	
 	
 .project-image-slider .bx-wrapper .bx-next {
@@ -1868,7 +1868,7 @@ padding:80px 0 60px;
     z-index: 100;
 }
 	
-/* Gallary Normal Expander */		
+/* gallery Normal Expander */		
 	
 .project-description {
     margin-top: 40px;
@@ -1900,7 +1900,7 @@ padding:80px 0 60px;
 	
 	
 	
-/* Gallary FullScreen Expander */			
+/* gallery FullScreen Expander */			
 	
 #cycle-loader {
     height: 32px;
