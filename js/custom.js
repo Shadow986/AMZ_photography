@@ -138,12 +138,12 @@ const AUTH_TOKEN = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
 
 const submitData = async (formData) => {
     try {
-        const response = await fetch('https://amzphotography.mooo.com/submitForm', {
+        const response = await fetch('https://u1wzkcuyud.execute-api.us-east-1.amazonaws.com/Prod', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': `Bearer ${AUTH_TOKEN}` // Correct string interpolation
+                'Authorization': 'Bearer rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb'
             },
             body: JSON.stringify(formData),
         });
