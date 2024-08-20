@@ -66,4 +66,10 @@ body {
     left: 0;
 }
 
+.card.active img {
+    transform: scale(1.2); /* 
+    transition: transform 0.3s ease-in-out;
+}
+
+
 
