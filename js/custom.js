@@ -144,9 +144,10 @@ const submitData = async (formData) => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
                 'Authorization': 'Bearer rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb'
+		    'Origin': 'https://amz-photography.vercel.app'
             },
-            body: JSON.stringify(formData),
-        });
+            body: JSON.stringify(formData)
+       	 });
 
         if (!response.ok) {
             throw new Error(`Network response was not ok: ${response.statusText}`); // Correct error message formatting
@@ -158,6 +159,13 @@ const submitData = async (formData) => {
         console.error('Error submitting data:', error);
         alert('Failed to send message.');
     }
+};
+
+// Example usage
+const formData = {
+    name: 'John Doe',
+    email: 'john.doe@example.com',
+    message: 'Hello, this is a test message.'
 };
 
 // Example of how to use submitData, e.g., on form submission
