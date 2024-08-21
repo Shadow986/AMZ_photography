@@ -65,3 +65,17 @@ body {
 .card:nth-child(4) img {
     left: -8rem;
 }
+
+.card img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 1rem; /* Add space below each image */
+}
+
+hr {
+    width: 100%;
+    margin: 1rem 0; /* Add space above and below the <hr> */
+}
+
