@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.award {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.award h2 {
+    color: #333;
+}
+
+.award .month {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.award h3 {
+    color: #007BFF;
+}
+
+.award p {
+    color: #666;
+}
+
+.award a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.award a:hover {
+    text-decoration: underline;
+}
