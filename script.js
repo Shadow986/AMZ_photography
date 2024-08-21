@@ -1,12 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Select all card elements
-    const cards = document.querySelectorAll('.card');
+document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".card img");
+    const body = document.querySelector("body");
 
-    // Loop through each card
     cards.forEach(card => {
-        card.addEventListener('click', () => {
-            // Toggle a class that scales the image
-            card.classList.toggle('active');
+        card.addEventListener("click", function() {
+            const overlay = document.createElement("div");
+            overlay.className = "overlay active";
+            body.appendChild(overlay);
+            
+            this.classList.toggle("expanded");
+
+            overlay.addEventListener("click", function() {
+                card.classList.remove("expanded");
+                body.removeChild(overlay);
+            });
         });
     });
 });
