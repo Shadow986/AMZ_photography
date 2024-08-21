@@ -134,7 +134,7 @@ if (someElement) {
 }
 
 // Example function to submit data to backend
-const AUTH_TOKEN = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
+const AUTH_TOKEN = 'rhVHdZG7kb32cRrOSq5Ch9IRourm7WyfL1fSxL6gb';
 
 const submitData = async (formData) => {
     try {
@@ -143,7 +143,7 @@ const submitData = async (formData) => {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'Authorization': 'Bearer rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb'
+                'Authorization': 'Bearer rhVHdZG7kb32cRrOSq5Ch9IRourm7WyfL1fSxL6gb'
 		    'Origin': 'https://amz-photography.vercel.app'
             },
             body: JSON.stringify(formData)

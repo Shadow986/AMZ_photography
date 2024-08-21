@@ -9,7 +9,7 @@ exports.handler = async (event) => {
     const token = event.headers.Authorization ? event.headers.Authorization.split(' ')[1] : null;
     console.log("Token:", token);
 
-    const validToken = 'rhVHdZG7kb32cRrOSq5Ch9IRMYm7WyfL1fSxL6gb';
+    const validToken = 'rhVHdZG7kb32cRrOSq5Ch9IRourm7WyfL1fSxL6gb';
 
     if (token !== validToken) {
       console.log("Invalid token");

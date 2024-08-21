@@ -474,7 +474,7 @@
                   "ImagesBucket": {
                     "Type": "AWS::S3::Bucket",
                     "Properties": {
-                      "BucketName": "my-images-amz"
+                      "BucketName": "our-images-amz"
                     }
                   }
                 },
@@ -662,7 +662,7 @@
                 "ImagesBucket": {
                   "Type": "AWS::S3::Bucket",
                   "Properties": {
-                    "BucketName": "my-images-amz"
+                    "BucketName": "our-images-amz"
                   }
                 }
               },
@@ -1151,7 +1151,7 @@
             "ImagesBucket": {
               "Type": "AWS::S3::Bucket",
               "Properties": {
-                "BucketName": "my-images-amz"
+                "BucketName": "our-images-amz"
               }
             }
           },
@@ -1339,14 +1339,14 @@
           "ImagesBucket": {
             "Type": "AWS::S3::Bucket",
             "Properties": {
-              "BucketName": "my-images-amz"
+              "BucketName": "our-images-amz"
             }
           }
         },
         "Outputs": {}
       }
     },
-    "serviceRawFile": "service: amz-backend  # Corrected service name\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  region: us-east-1\r\n\r\nfunctions:\r\n  uploadImage:\r\n    handler: handler.uploadImage\r\n    events:\r\n      - http:\r\n          path: upload\r\n          method: post\r\n\r\n  getImages:\r\n    handler: handler.getImages\r\n    events:\r\n      - http:\r\n          path: images\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    ImagesBucket:\r\n      Type: AWS::S3::Bucket\r\n      Properties:\r\n        BucketName: my-images-amz\r\n",
+    "serviceRawFile": "service: amz-backend  # Corrected service name\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  region: us-east-1\r\n\r\nfunctions:\r\n  uploadImage:\r\n    handler: handler.uploadImage\r\n    events:\r\n      - http:\r\n          path: upload\r\n          method: post\r\n\r\n  getImages:\r\n    handler: handler.getImages\r\n    events:\r\n      - http:\r\n          path: images\r\n          method: get\r\n\r\nresources:\r\n  Resources:\r\n    ImagesBucket:\r\n      Type: AWS::S3::Bucket\r\n      Properties:\r\n        BucketName: our-images-amz\r\n",
     "command": [
       "deploy"
     ],

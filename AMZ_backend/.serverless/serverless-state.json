@@ -467,7 +467,7 @@
           "ImagesBucket": {
             "Type": "AWS::S3::Bucket",
             "Properties": {
-              "BucketName": "my-images-amz"
+              "BucketName": "our-images-amz"
             }
           }
         },
@@ -656,7 +656,7 @@
         "ImagesBucket": {
           "Type": "AWS::S3::Bucket",
           "Properties": {
-            "BucketName": "my-images-amz"
+            "BucketName": "our-images-amz"
           }
         }
       },

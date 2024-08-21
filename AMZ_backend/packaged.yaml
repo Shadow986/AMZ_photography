@@ -37,12 +37,12 @@ Resources:
   ServerlessRestApi:
     Type: AWS::Serverless::Api
     Properties:
-      Name: MyApi
+      Name: ourApi
       StageName: Prod
       DefinitionBody:
         swagger: "2.0"
         info:
-          title: "My API"
+          title: "our API"
           version: "1.0"
         paths:
           /submitForm:

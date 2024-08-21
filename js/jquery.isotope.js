@@ -958,12 +958,12 @@
     //   with the the minY
     _masonryPlaceBrick : function( $brick, setY ) {
       // get the minimum Y value from the columns
-      var minimumY = Math.min.apply( Math, setY ),
+      var minimuour = Math.min.apply( Math, setY ),
           shortCol = 0;
 
       // Find index of short column, the first from the left
       for (var i=0, len = setY.length; i < len; i++) {
-        if ( setY[i] === minimumY ) {
+        if ( setY[i] === minimuour ) {
           shortCol = i;
           break;
         }
@@ -971,11 +971,11 @@
 
       // position the brick
       var x = this.masonry.columnWidth * shortCol,
-          y = minimumY;
+          y = minimuour;
       this._pushPosition( $brick, x, y );
 
       // apply setHeight to necessary columns
-      var setHeight = minimumY + $brick.outerHeight(true),
+      var setHeight = minimuour + $brick.outerHeight(true),
           setSpan = this.masonry.cols + 1 - len;
       for ( i=0; i < setSpan; i++ ) {
         this.masonry.colYs[ shortCol + i ] = setHeight;
@@ -1293,9 +1293,9 @@
    */
 
 
-  // $('#my-container').imagesLoaded(myFunction)
+  // $('#our-container').imagesLoaded(ourFunction)
   // or
-  // $('img').imagesLoaded(myFunction)
+  // $('img').imagesLoaded(ourFunction)
 
   // execute a callback when all images have loaded.
   // needed because .load() doesn't work on cached images

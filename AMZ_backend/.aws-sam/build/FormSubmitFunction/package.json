@@ -1,5 +1,5 @@
 {
-  "name": "my-serverless-app",
+  "name": "our-serverless-app",
   "version": "1.0.0",
   "description": "Serverless application for handling form submissions",
   "main": "handleFormSubmit.js",
