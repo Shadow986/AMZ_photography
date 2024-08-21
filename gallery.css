@@ -1,12 +1,13 @@
 :root {
     --background: black;
-    
+    --colour : white ; 
+
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  
 }
 
 body {
@@ -18,58 +19,49 @@ body {
 
 .gallery {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     max-width: 80rem;
-    justify-content: center;
 }
 
 .card {
     position: relative;
-    width: 15rem;
+    left: 0;
+    width: 6rem;
     border-radius: 1.2rem;
-    height: 15rem;
+    height: 20rem;
     overflow: hidden;
     background: var(--background);
     transition: 0.4s ease-in-out;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
-    flex: 1 1 calc(25% - 2rem);
+    flex: 0.25;
 }
 
 .card img {
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 20rem;
     object-fit: cover;
 }
 
 .card:hover {
-    flex-grow: 2;
+    flex: 2;
+    font-weight: bold;
     cursor: pointer;
     border-radius: 1rem;
 }
 
-/* Optional: Adjust image positioning for specific cards */
+/* polish images center */
 .card:nth-child(1) img {
-    left: 0;
+    left: -8rem;
 }
 
 .card:nth-child(2) img {
-    left: 0;
+    left: -6rem;
 }
 
 .card:nth-child(3) img {
-    left: 0;
+    left: -14rem;
 }
 
 .card:nth-child(4) img {
-    left: 0;
+    left: -8rem;
 }
-
-.card.active img {
-    transform: scale(1.2); /* 
-    transition: transform 0.3s ease-in-out;
-}
-
-
-
