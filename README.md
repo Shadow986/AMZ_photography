@@ -1,4 +1,4 @@
-📸 AMZ Photography Website
+# 📸 AMZ Photography Website
 
 
 Overview
